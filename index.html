@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini shop</title>
+    <link rel="stylesheet" href="./styles/reset.css" >
+    <link rel="stylesheet" href="./styles/style.css" >
+
+    <script src="./js/constants/constants.js" defer></script>
+    <script src="./js/mook/products.mook.js" defer></script>
+
+    <script src="./js/components/validate.js" defer></script>
+
+    <script src="./js/modules/categories.js" defer></script>
+    <script src="./js/modules/product/products.js" defer></script>
+    <script src="./js/modules/product/product.js" defer></script>
+    <script src="./js/modules/order/order.js" defer></script>
+    <script src="./js/modules/order/myOrders.js" defer></script>
+    <script src="./js/modules/sms.js" defer></script>
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+    <main class="main">
+        <div class="container">
+            <div class="main__box">
+                <aside class="menu box">
+                    <div class="menu__my-orders">
+                        <button class="menu__button button button--no-animate" id="my-orders-btn" type="button">
+                            <span>Мои заказы</span>
+                            <span>Закрыть</span>
+                        </button>
+                        <div class="my-orders"></div>
+                    </div>
+                    <div class="menu__categories">
+                        <h3 class="menu__title title">Категории</h3>
+                        <div class="categories-list">
+                            <button class="categories-list__btn" type="button" data-category="phone">Смартфоны</button>
+                            <button class="categories-list__btn" type="button" data-category="tablet">Планшеты</button>
+                            <button class="categories-list__btn" type="button" data-category="laptop">Ноутбуки</button>
+                        </div>
+                    </div>
+                </aside>
+                <div class="products box">
+                    <h3 class="products__title title">Товары</h3>
+                    <div class="products__items"></div>
+                </div>
+                <aside class="product box">
+                    <img class="product__img" src="#" alt="product">
+                    <h2 class="product__title">Title</h2>
+                    <div class="product__buy">
+                        <div class="product-price">
+                            <p></p>
+                            <h6>Price</h6>
+                        </div>
+                        <button class="product__buy-btn button" type="button">
+                            <span>Купить</span>
+                            <span>Отмена</span>
+                        </button>
+                    </div>
+                    <form class="product__form">
+                        <div class="field">
+                            <input class="field__entry" type="text" name="fio" placeholder="ФИО">
+                            <p class="field__error"></p>
+                        </div>
+                        <div class="field">
+                            <select class="field__select" name="city">
+                                <option value="">Выбрать город</option>
+                                <option value="Одесса">Одесса</option>
+                                <option value="Киев">Киев</option>
+                                <option value="Харьков">Харьков</option>
+                                <option value="Херсон">Херсон</option>
+                                <option value="Львов">Львов</option>
+                                <option value="Днепр">Днепр</option>
+                            </select>
+                            <p class="field__error"></p>
+                        </div>
+                        <div class="field">
+                            <input class="field__entry" type="text" name="stock" placeholder="Склад Новой почты для отправки">
+                            <p class="field__error"></p>
+                        </div>
+                        <div class="field">
+                            <label class="field__label">
+                                <span>Наложный платеж</span>
+                                <input class="field__checkbox" name="payment" type="radio" value="Наложный платеж">
+                            </label>
+                            <label class="field__label">
+                                <span>Оплата картой</span>
+                                <input class="field__checkbox" name="payment" type="radio" value="Оплата картой">
+                            </label>
+                            <p class="field__error"></p>
+                        </div>
+                        <div class="field">
+                            <input class="field__entry" type="number" name="count" value="1" placeholder="Количество">
+                            <p class="field__error"></p>
+                        </div>
+                        <div class="field">
+                            <textarea class="field__textarea" name="comment" rows="2" placeholder="Коментарий"></textarea>
+                            <p class="field__error"></p>
+                        </div>
+                        <button class="product__form-btn button">Купить</button>
+                    </form>
+                    <ul class="product__data"></ul>
+                </aside>
+                <div class="sms">
+                    <div class="sms__text">
+                        Большое спасибо за ваш заказ! 🌺
+                    </div>
+                    <div class="sms__content">
+                        <div class="sms__content-box">
+                            <h6 class="sms__title title">О товаре</h6>
+                            <ul class="sms__data" id="sms-product">
+                                <li class="sms__data-item">
+                                    <span>Название:</span>
+                                    <span id="sms-product-title"></span>
+                                </li>
+                                <li class="sms__data-item">
+                                    <span>Категория:</span>
+                                    <span id="sms-product-category"></span>
+                                </li>
+                                <li class="sms__data-item">
+                                    <span>Цена:</span>
+                                    <span>
+                                        <span id="sms-product-price"></span>₴
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sms__content-box">
+                            <h6 class="sms__title title">О заказе</h6>
+                            <ul class="sms__data" id="sms-order"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
