@@ -1,5 +1,5 @@
-#1 Знакомство с Git. Github
+#1 Mini shop
 
 ---
 
-Hello World!
+A small online store project in pure JavaScript.
